@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #121212; /* Dark NBA.com style */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1d428a; /* NBA blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: #c8102e; /* NBA Red */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #1d1d1d; /* Dark mode table */
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    background: #c8102e; /* NBA red */
+    color: white;
+    font-weight: 700;
+}
+
+tr:hover {
+    background: #292929;
+}
+input {
+    padding: 12px;
+    width: 300px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #c8102e; /* NBA red */
+    background: #1d1d1d;
+    color: white;
+    text-align: center;
+}
+
+input:focus {
+    border-color: #ffba08; /* Gold accent */
+    outline: none;
+}
+
+button {
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: #c8102e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffba08;
+}
+.awards {
+    background: linear-gradient(135deg, #ffba08, #c8102e);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(0, 0, 0, 0.7);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+body {
+    background: url("{{ url_for('static', filename='basketball_court.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+}
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+}
+
+/* Ensure the search box and dropdown align correctly */
+.search-container {
+    position: relative; /* This makes the dropdown position relative to this container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px; /* Adjust based on your layout */
+    margin: 20px auto;
+}
+
+/* Style the search input */
+#playerInput {
+    padding: 12px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #c8102e; /* NBA red */
+    background: #1d1d1d;
+    color: white;
+    text-align: center;
+}
+
+/* Dropdown Styling */
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%; /* Positions it directly below the input */
+    left: 0;
+    width: 100%;
+    background: #1d1d1d; /* Dark background */
+    border: 2px solid #c8102e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Suggestion Items */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    color: gray;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.suggestion-item:hover {
+    background-color: #c8102e; /* NBA Red */
+}
+
+
+

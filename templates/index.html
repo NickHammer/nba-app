@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Player Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='nba_logo.png') }}" alt="NBA Logo">
+        <h1>NBA Stats Hub</h1>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Players</a>
+        <a href="#">Teams</a>
+        <a href="#">Standings</a>
+        <a href="#">Stats</a>
+    </nav>
+</header>
+<body>
+    <h1>NBA Player Stats</h1>
+    <div class=" "search-container">
+    <input type="text" id="playerInput" placeholder="Enter player name" onkeyup="filterPlayers()">
+        <div id="suggestions" claass="autocomplete-dropdown"></div>
+    </div>
+    <div id="suggestions" class="autocomplete-dropdown"></div>
+
+    <button onclick="fetchStats()">Get Stats</button>
+
+    <div class="container">
+        <!-- Stats Table -->
+        <div class="stats">
+            <h2>Career Stats</h2>
+            <table id="statsTable">
+                <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>PTS</th>
+                        <th>AST</th>
+                        <th>REB</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Awards Section -->
+        <div class="awards">
+            <h2>Awards</h2>
+            <ul id="awardsList"></ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
